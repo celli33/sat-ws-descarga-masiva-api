@@ -1,4 +1,4 @@
-enum RequestTypeEnum {
+export enum requestTypeEnum {
     XML = 'xml',
     METADATA = 'metadata',
 }

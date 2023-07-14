@@ -20,4 +20,4 @@
 
 import Route from '@ioc:Adonis/Core/Route';
 
-Route.post('/make-query', 'MakeQueriesController');
+Route.post('make-query', 'MakeQueriesController').as('make-query');

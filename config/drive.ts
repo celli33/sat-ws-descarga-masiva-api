@@ -79,6 +79,12 @@ export default driveConfig({
       */
             basePath: '/uploads',
         },
+        privateLocal: {
+            driver: 'local',
+            visibility: 'private',
+            root: `${Application.appRoot}/storage`,
+            // ... rest of the config
+        },
 
         /*
     |--------------------------------------------------------------------------

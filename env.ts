@@ -19,6 +19,9 @@ export default Env.rules({
     PORT: Env.schema.number(),
     APP_KEY: Env.schema.string(),
     APP_NAME: Env.schema.string(),
-    DRIVE_DISK: Env.schema.enum(['local'] as const),
+    DRIVE_DISK: Env.schema.enum(['local', 'privateLocal'] as const),
     NODE_ENV: Env.schema.enum(['development', 'production', 'test'] as const),
+    CERTIFICATE_PATH: Env.schema.string({ format: 'url', tld: false, protocol: false }),
+    PRIVATE_KEY_PATH: Env.schema.string({ format: 'url', tld: false, protocol: false }),
+    PRIVATE_KEY_PASSPHRASE_PATH: Env.schema.string(),
 });

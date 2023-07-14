@@ -11,9 +11,18 @@ dependencies:
   '@adonisjs/repl':
     specifier: ^3.1.0
     version: 3.1.11(@adonisjs/core@5.9.0)
+  '@nodecfdi/cfdiutils-common':
+    specifier: ^1.2.4
+    version: 1.2.4
   '@nodecfdi/sat-ws-descarga-masiva':
     specifier: file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz
     version: file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz
+  '@xmldom/xmldom':
+    specifier: ^0.8.9
+    version: 0.8.9
+  luxon:
+    specifier: ^3.3.0
+    version: 3.3.0
   proxy-addr:
     specifier: ^2.0.7
     version: 2.0.7
@@ -34,6 +43,9 @@ devDependencies:
   '@japa/runner':
     specifier: ^2.5.1
     version: 2.5.1
+  '@types/luxon':
+    specifier: ^3.3.0
+    version: 3.3.0
   '@types/proxy-addr':
     specifier: ^2.0.0
     version: 2.0.0
@@ -1010,6 +1022,11 @@ packages:
       '@typescript-eslint/types': 5.62.0
       eslint-visitor-keys: 3.4.1
     dev: true
+
+  /@xmldom/xmldom@0.8.9:
+    resolution: {integrity: sha512-4VSbbcMoxc4KLjb1gs96SRmi7w4h1SF+fCoiK0XaQX62buCc1G5d0DC5bJ9xJBNPDSVCmIrcl8BiYxzjrqaaJA==}
+    engines: {node: '>=10.0.0'}
+    dev: false
 
   /abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -4881,7 +4898,7 @@ packages:
     dev: true
 
   file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz:
-    resolution: {integrity: sha512-rcCzyjMZUCFS6W1eHAk01eTQoJhO9+M5CpeVCnJXql8UYdF//z/P5M5BiE2WPw7q5bV5uXX/+vDzmamucoujLQ==, tarball: file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz}
+    resolution: {integrity: sha512-ytX2zjlma2WX8EE4sb9hpSb6BUeN5U6vil7z4FXvX2wYxDdDMu9EUii+dcZ8uJLFTknaoNi3murmKBwKjlKBng==, tarball: file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz}
     name: '@nodecfdi/sat-ws-descarga-masiva'
     version: 0.1.2
     engines: {node: '>= 14.18.0'}

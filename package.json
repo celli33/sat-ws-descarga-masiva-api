@@ -44,6 +44,7 @@
     "@adonisjs/assembler": "^5.9.5",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/runner": "^2.5.1",
+    "@types/luxon": "^3.3.0",
     "@types/proxy-addr": "^2.0.0",
     "@types/source-map-support": "^0.5.6",
     "adonis-preset-ts": "^2.1.0",
@@ -60,7 +61,10 @@
   "dependencies": {
     "@adonisjs/core": "^5.8.0",
     "@adonisjs/repl": "^3.1.0",
+    "@nodecfdi/cfdiutils-common": "^1.2.4",
     "@nodecfdi/sat-ws-descarga-masiva": "file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz",
+    "@xmldom/xmldom": "^0.8.9",
+    "luxon": "^3.3.0",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21"
