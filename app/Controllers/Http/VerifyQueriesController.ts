@@ -60,12 +60,12 @@ export default class VerifyQueriesController {
         }
 
         if (statusRequest.isTypeOf('InProgress') || statusRequest.isTypeOf('Accepted')) {
-            return response.badRequest({
+            return response.ok({
                 message: `La solicitud ${payload.uuid} se está procesando`,
             });
         }
         if (statusRequest.isTypeOf('Finished')) {
-            return response.badRequest({
+            return response.ok({
                 message: `La solicitud ${payload.uuid} está lista`,
             });
         }
