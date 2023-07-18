@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.2.4
     version: 1.2.4
   '@nodecfdi/sat-ws-descarga-masiva':
-    specifier: file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz
-    version: file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz
+    specifier: ^0.1.4
+    version: 0.1.4
   '@xmldom/xmldom':
     specifier: ^0.8.9
     version: 0.8.9
@@ -617,6 +617,18 @@ packages:
     engines: {node: '>=16.0.0'}
     dependencies:
       luxon: 3.3.0
+    dev: false
+
+  /@nodecfdi/sat-ws-descarga-masiva@0.1.4:
+    resolution: {integrity: sha512-X0QNyUMgDfXmlJil3BuUuAn4w5riIc3m6uwQ+Q/UBMBwvjJaIU0/llxepP5s/01n8nPRcTAo8uieYBFQpCUKRQ==}
+    engines: {node: '>= 14.18.0'}
+    dependencies:
+      '@nodecfdi/cfdiutils-common': 1.2.4
+      '@nodecfdi/credentials': 2.0.3
+      '@nodecfdi/rfc': 1.3.2
+      jszip: 3.10.1
+      luxon: 3.3.0
+      node-forge: 1.3.1
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:
@@ -4896,17 +4908,3 @@ packages:
     optionalDependencies:
       commander: 9.5.0
     dev: true
-
-  file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz:
-    resolution: {integrity: sha512-ytX2zjlma2WX8EE4sb9hpSb6BUeN5U6vil7z4FXvX2wYxDdDMu9EUii+dcZ8uJLFTknaoNi3murmKBwKjlKBng==, tarball: file:../sat-ws-descarga-masiva/nodecfdi-sat-ws-descarga-masiva-0.1.2.tgz}
-    name: '@nodecfdi/sat-ws-descarga-masiva'
-    version: 0.1.2
-    engines: {node: '>= 14.18.0'}
-    dependencies:
-      '@nodecfdi/cfdiutils-common': 1.2.4
-      '@nodecfdi/credentials': 2.0.3
-      '@nodecfdi/rfc': 1.3.2
-      jszip: 3.10.1
-      luxon: 3.3.0
-      node-forge: 1.3.1
-    dev: false
