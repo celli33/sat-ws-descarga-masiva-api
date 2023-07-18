@@ -1,6 +1,6 @@
 # SAT WS DESCARGA MASIVA API
 
-Este es un proyecto TS de adonisjs que hace una implementación básica de la librería [https://github.com/nodecfdi/sat-ws-descarga-masiva](descarga masiva).
+Este es un proyecto TS de adonisjs que hace una implementación básica de la librería [@nodecfdi/sat-ws-descarga-masiva](https://github.com/nodecfdi/sat-ws-descarga-masiva).
 
 ## Instalación
 
