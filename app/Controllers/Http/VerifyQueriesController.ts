@@ -44,6 +44,7 @@ export default class VerifyQueriesController {
         if (!verify.getStatus().isAccepted()) {
             return response.badRequest({
                 message: `Fallo al verificar la consulta ${payload.uuid}: ${verify.getStatus().getMessage()}`,
+                errors: verify.toJSON(),
             });
         }
 
@@ -55,7 +56,8 @@ export default class VerifyQueriesController {
             statusRequest.isTypeOf('Rejected')
         ) {
             return response.badRequest({
-                message: `La solicitud ${payload.uuid} no se puede completar`,
+                message: `La solicitud ${payload.uuid} no se puede completar status: ${statusRequest.getEntryId()}`,
+                errors: verify.toJSON(),
             });
         }
 
@@ -65,8 +67,16 @@ export default class VerifyQueriesController {
             });
         }
         if (statusRequest.isTypeOf('Finished')) {
+            console.log(`Se encontraron ${verify.countPackages()} paquetes`);
+            const packageIds: string[] = [];
+            for (const packageId of verify.getPackageIds()) {
+                packageIds.push(packageId);
+            }
             return response.ok({
                 message: `La solicitud ${payload.uuid} está lista`,
+                data: {
+                    packageIds,
+                },
             });
         }
     }

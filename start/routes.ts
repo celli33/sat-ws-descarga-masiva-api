@@ -22,3 +22,4 @@ import Route from '@ioc:Adonis/Core/Route';
 
 Route.post('make-query', 'MakeQueriesController').as('make-query');
 Route.post('verify-query', 'VerifyQueriesController').as('verify-query');
+Route.post('download-query', 'DownloadQueriesController').as('download-query');
