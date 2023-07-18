@@ -10,7 +10,7 @@ test.group('Verify query', () => {
             endpoint: EndpointEnum.CFDI,
         });
 
-        response.dump();
+        response.dumpBody();
 
         response.assertStatus(200);
     });

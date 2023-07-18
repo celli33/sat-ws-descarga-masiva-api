@@ -8,10 +8,10 @@ test.group('Make query', () => {
         const response = await client.post(Route.makeUrl('make-query')).json({
             startDate: '2023-01-01T00:00:00',
             endDate: '2023-06-30T00:00:01',
-            downloadType: DownloadTypeEnum.ISSUED,
-            requestType: RequestTypeEnum.XML,
+            downloadType: DownloadTypeEnum.RECEIVED,
+            requestType: RequestTypeEnum.METADATA,
         });
-        response.dump();
+        response.dumpBody();
 
         response.assertStatus(201);
     });

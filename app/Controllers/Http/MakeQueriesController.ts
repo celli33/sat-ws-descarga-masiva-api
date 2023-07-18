@@ -104,6 +104,9 @@ export default class MakeQueriesController {
         }
         return response.created({
             message: `Se generó la solicitud ${query.getRequestId()}`,
+            data: {
+                uuid: query.getRequestId(),
+            },
         });
     }
 }

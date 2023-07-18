@@ -6,11 +6,19 @@ test.group('Download query', () => {
     const packageIds = ['put-ids-from-verify-query-response'];
     test('download query', async ({ client }) => {
         const response = await client.post(Route.makeUrl('download-query')).json({
-            ids: packageIds,
+            packageIds: packageIds,
             endpoint: EndpointEnum.CFDI,
         });
 
-        response.dump();
+        response.assertBodyContains({
+            data: {
+                packages: [
+                    {
+                        id: packageIds[0],
+                    },
+                ],
+            },
+        });
 
         response.assertStatus(200);
     });

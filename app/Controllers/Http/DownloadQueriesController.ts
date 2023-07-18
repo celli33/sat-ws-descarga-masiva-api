@@ -43,23 +43,27 @@ export default class DownloadQueriesController {
         const requestBuilder = new FielRequestBuilder(fiel);
         const service = new Service(requestBuilder, webClient, undefined, endPoint);
 
-        const messageForPackage: string[] = [];
+        const packages: { id: string; message: string }[] = [];
 
-        for await (const packageId of payload.ids) {
+        for await (const packageId of payload.packageIds) {
             const download = await service.download(packageId);
             if (!download.getStatus().isAccepted()) {
-                messageForPackage.push(
-                    `El paquete ${packageId} no se ha podido descargar: ${download.getStatus().getMessage()}`
-                );
+                packages.push({
+                    id: packageId,
+                    message: `El paquete ${packageId} no se ha podido descargar: ${download.getStatus().getMessage()}`,
+                });
                 continue;
             }
             await Drive.put(`${packageId}.zip`, Buffer.from(download.getPackageContent(), 'base64'));
-            messageForPackage.push(`el paquete ${packageId} se ha almacenado`);
+            packages.push({
+                id: packageId,
+                message: `El paquete ${packageId} se ha guardado con éxito en storage/${packageId}.zip`,
+            });
         }
         return response.ok({
-            message: 'Resument de paquetes',
+            message: 'Resumen de paquetes',
             data: {
-                messageForPackage,
+                packages: packages,
             },
         });
     }

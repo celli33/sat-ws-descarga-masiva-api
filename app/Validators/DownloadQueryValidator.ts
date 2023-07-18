@@ -25,7 +25,7 @@ export default class DownloadQueryValidator {
      *    ```
      */
     public schema = schema.create({
-        ids: schema.array().members(schema.string()),
+        packageIds: schema.array().members(schema.string()),
         endPoint: schema.enum.nullableAndOptional(Object.values(EndpointEnum)),
     });
 
