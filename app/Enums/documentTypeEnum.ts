@@ -1,4 +1,4 @@
-export enum documentTypeEnum {
+export enum DocumentTypeEnum {
     I = 'ingreso',
     E = 'egreso',
     T = 'traslado',

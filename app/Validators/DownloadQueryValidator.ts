@@ -1,6 +1,6 @@
 import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator';
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-import { endpointEnum } from '../Enums/endpointEnum';
+import { EndpointEnum } from '../Enums/endpointEnum';
 
 export default class DownloadQueryValidator {
     constructor(protected ctx: HttpContextContract) {}
@@ -26,7 +26,7 @@ export default class DownloadQueryValidator {
      */
     public schema = schema.create({
         ids: schema.array().members(schema.string()),
-        endPoint: schema.enum.nullableAndOptional(Object.values(endpointEnum)),
+        endPoint: schema.enum.nullableAndOptional(Object.values(EndpointEnum)),
     });
 
     /**

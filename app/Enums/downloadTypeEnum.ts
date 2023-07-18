@@ -1,4 +1,4 @@
-export enum downloadTypeEnum {
+export enum DownloadTypeEnum {
     ISSUED = 'issued',
     RECEIVED = 'received',
 }

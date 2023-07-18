@@ -1,4 +1,4 @@
-export enum complementEnum {
+export enum ComplementEnum {
     undefined,
     acreditamientoIeps10,
     aerolineas10,

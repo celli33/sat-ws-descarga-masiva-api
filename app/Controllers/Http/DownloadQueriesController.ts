@@ -5,7 +5,7 @@ import Drive from '@ioc:Adonis/Core/Drive';
 import Env from '@ioc:Adonis/Core/Env';
 import { DOMParser, XMLSerializer, DOMImplementation } from '@xmldom/xmldom';
 import { install } from '@nodecfdi/cfdiutils-common';
-import { endpointEnum } from '../../Enums/endpointEnum';
+import { EndpointEnum } from '../../Enums/endpointEnum';
 
 export default class DownloadQueriesController {
     public async handle({ request, response }: HttpContextContract) {
@@ -34,7 +34,7 @@ export default class DownloadQueriesController {
         let endPoint: ServiceEndpoints;
         if (payload.endPoint) {
             endPoint =
-                payload.endPoint === endpointEnum.CFDI ? ServiceEndpoints.cfdi() : ServiceEndpoints.retenciones();
+                payload.endPoint === EndpointEnum.CFDI ? ServiceEndpoints.cfdi() : ServiceEndpoints.retenciones();
         } else {
             endPoint = ServiceEndpoints.cfdi();
         }

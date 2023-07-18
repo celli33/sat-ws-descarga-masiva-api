@@ -1,4 +1,4 @@
-export enum endpointEnum {
+export enum EndpointEnum {
     CFDI = 'cfdi',
     RETENCIONES = 'retenciones',
 }

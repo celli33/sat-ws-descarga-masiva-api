@@ -1,11 +1,11 @@
 import { schema, CustomMessages, rules } from '@ioc:Adonis/Core/Validator';
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-import { endpointEnum } from '../Enums/endpointEnum';
-import { downloadTypeEnum } from '../Enums/downloadTypeEnum';
-import { requestTypeEnum } from '../Enums/requestTypeEnum';
-import { documentTypeEnum } from '../Enums/documentTypeEnum';
-import { documentStatusEnum } from '../Enums/documentStatusEnum';
-import { complementEnum } from '../Enums/complementEnum';
+import { EndpointEnum } from '../Enums/endpointEnum';
+import { DownloadTypeEnum } from '../Enums/downloadTypeEnum';
+import { RequestTypeEnum } from '../Enums/requestTypeEnum';
+import { DocumentTypeEnum } from '../Enums/documentTypeEnum';
+import { DocumentStatusEnum } from '../Enums/documentStatusEnum';
+import { ComplementEnum } from '../Enums/complementEnum';
 
 export default class MakeQueryValidator {
     constructor(protected ctx: HttpContextContract) {}
@@ -32,12 +32,12 @@ export default class MakeQueryValidator {
     public schema = schema.create({
         startDate: schema.date(),
         endDate: schema.date(),
-        endPoint: schema.enum.nullableAndOptional(Object.values(endpointEnum)),
-        downloadType: schema.enum(Object.values(downloadTypeEnum)),
-        requestType: schema.enum(Object.values(requestTypeEnum)),
-        documentType: schema.enum.nullableAndOptional(Object.values(documentTypeEnum)),
-        documentStatus: schema.enum.nullableAndOptional(Object.values(documentStatusEnum)),
-        complement: schema.enum.nullableAndOptional(Object.values(complementEnum)),
+        endPoint: schema.enum.nullableAndOptional(Object.values(EndpointEnum)),
+        downloadType: schema.enum(Object.values(DownloadTypeEnum)),
+        requestType: schema.enum(Object.values(RequestTypeEnum)),
+        documentType: schema.enum.nullableAndOptional(Object.values(DocumentTypeEnum)),
+        documentStatus: schema.enum.nullableAndOptional(Object.values(DocumentStatusEnum)),
+        complement: schema.enum.nullableAndOptional(Object.values(ComplementEnum)),
         rfcMatches: schema.array.nullableAndOptional().members(schema.string({}, [rules.uuid()])),
         uuid: schema.string.nullableAndOptional({}, [rules.uuid()]),
         rfcOnBehalf: schema.string.nullableAndOptional(),

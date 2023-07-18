@@ -1,6 +1,6 @@
 import { schema, CustomMessages, rules } from '@ioc:Adonis/Core/Validator';
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-import { endpointEnum } from '../Enums/endpointEnum';
+import { EndpointEnum } from '../Enums/endpointEnum';
 
 export default class VerifyQueryValidator {
     constructor(protected ctx: HttpContextContract) {}
@@ -26,7 +26,7 @@ export default class VerifyQueryValidator {
      */
     public schema = schema.create({
         uuid: schema.string({}, [rules.uuid()]),
-        endPoint: schema.enum.nullableAndOptional(Object.values(endpointEnum)),
+        endPoint: schema.enum.nullableAndOptional(Object.values(EndpointEnum)),
     });
 
     /**
